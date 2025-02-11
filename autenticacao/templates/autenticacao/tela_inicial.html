@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial</title>
+    <link rel="stylesheet" href="{% static 'css/tela_inicial.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria&display=swap" rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.css" rel="stylesheet" />
+
+    <!-- Seu arquivo CSS personalizado -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}" /> <!-- Certifique-se que o caminho do arquivo calendar.css está correto -->
+
+    <!-- jQuery (necessário para o FullCalendar) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <!-- Moment.js (necessário para o FullCalendar) -->
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.js"></script>
+
+    <!-- FullCalendar Locale - Português Brasileiro -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/locale/pt-br.js"></script>
+
+</head>
+<body>
+    <header>
+        <img src="https://github.com/mariaclaraalvess/simplifique/blob/master/simplifique%20(5).png?raw=true" alt="Logo" class="logo">
+        <nav class="menu">
+            <a href="{% url 'saiba_mais' %}">Saiba Mais</a>
+            <a href="{% url 'quem_somos' %}">Quem Somos</a>
+            <a href="{% url 'suporte' %}">Suporte</a>
+        </nav>
+        <a href="{% url 'login' %}" class="login-btn">Login</a>
+    </header>
+
+    <main class="content">
+        <div class="left-section">
+            <img src="https://github.com/mariaclaraalvess/simplifique/blob/master/simplifique%20(6).png?raw=true" alt="Logo" class="left-logo">
+            <p class="intro-text">
+                <br>Organize seus eventos de forma fácil e eficiente!<br>
+                <br>Aqui você pode criar, gerenciar e compartilhar<br>
+                <br>eventos com poucos cliques.<br>
+            </p>
+            <p class="intro-text2">
+                <br>Personalize cada detalhe, receba notificações<br>
+                <br>importantes e conecte-se com seus participantes<br>
+                <br>de maneira prática.<br>
+            </p>
+            <a href="{% url 'login' %}" class="login-btn">Login</a>
+        </div>
+
+        <div class="right-section">
+            <div class="calendar-container">
+                <div id="calendar"></div>
+                <script>
+                    $(document).ready(function() {
+                        $('#calendar').fullCalendar({
+                            locale: 'pt-br',  // Define o idioma para português brasileiro
+                            events: '/calendar/events/',
+                            editable: true,
+                            droppable: true,
+                            dayClick: function(date, jsEvent, view) {
+                                alert('Você clicou no dia: ' + date.format());
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

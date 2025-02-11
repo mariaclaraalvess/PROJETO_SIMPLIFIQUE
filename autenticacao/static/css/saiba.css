@@ -1,0 +1,93 @@
+/* Resetando margens e paddings padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo a fonte global */
+body {
+    font-family: 'Alexandria', sans-serif;
+    background-color: #FFFFFF; /* Fundo branco */
+    color: #333; /* Cor padrão para o texto */
+    line-height: 1.6;
+}
+
+/* Main Content */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Seção da Esquerda */
+.left-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-logo {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.intro-text2 {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Seção da Direita */
+.right-section {
+    flex: 1.5;
+    padding: 20px;
+    background-color: #9B5DE5; /* Cor verde */
+    color: white;
+    border-radius: 10px;
+}
+
+.event-details h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.event-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.event-details li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.event-details li strong {
+    color: #FFFFFF; /* Branco para os destaques */
+}
+
+.event-details p {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        padding: 10px;
+    }
+
+    .left-logo {
+        max-width: 80%;
+    }
+}

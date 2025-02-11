@@ -1,0 +1,136 @@
+/* --- FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap');
+
+/* --- ESTILO DA TELA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alexandria', sans-serif;
+    background-color: #9B5DE5;
+}
+
+/* --- CONFIGURAÇÕES DO CABEÇALHO --- */
+header {
+    background-color: white;
+    height: 65px;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    gap: 6rem;
+}
+
+.menu a {
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #9B5DE5;
+    padding: 0;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: #9B5DE5;
+    background-color: #FFD700;
+    border: 3px solid #FFD700;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.login-btn:hover {
+    background-color: #9B5DE5;
+    color: #FFD700;
+}
+
+/* --- CONFIGURAÇÕES DO CORPO --- */
+main.content {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 65px);
+}
+
+.left-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.right-section {
+    width: 50%;
+    background-color: #9B5DE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+/* --- LADO ESQUERDO --- */
+.left-logo {
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto 2rem auto;
+}
+
+.intro-text, .intro-text2 {
+    display: flex;
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;  /* Reduzido para ajustar o espaçamento entre as linhas */
+    text-align: left;
+    line-height: 0.9;  /* Ajuste o line-height para garantir que o texto tenha espaçamento adequado */
+}
+
+.left-btn-login {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: white;
+    background-color: transparent;
+    border: 3px solid white;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.left-btn-login:hover {
+    background-color: white;
+    color: #7140AD;
+}
+
+

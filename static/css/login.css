@@ -1,0 +1,143 @@
+/* Importando a fonte Alexandria e Glacial Indifference */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alexandria', sans-serif;
+    background-color: #9B5DE5;
+}
+
+/* --- CONFIGURAÇÕES DO CABEÇALHO --- */
+
+header {
+    background-color: white;
+    height: 65px;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+}
+
+
+/* Ajuste no menu para alinhá-lo ao centro da página */
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    gap: 6rem;
+}
+
+.menu a {
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #9B5DE5;
+    padding: 0;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: #9B5DE5;
+    background-color: #FEE440;
+    border: 3px solid #FEE440;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.login-btn:hover {
+    background-color: #9B5DE5;
+    color: #FEE440;
+}
+
+/* Estilo do formulário de login */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+.rectangle {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Alinha os elementos centralizados */
+}
+
+.rectangle h1 {
+    color: #9B5DE5;
+    margin-bottom: 20px;
+}
+
+/* Ajustes nos inputs e botão */
+.rectangle input,
+.rectangle button {
+    width: 100%; /* Faz com que os campos ocupem toda a largura disponível */
+    padding: 10px;
+    margin: 10px 0; /* Garante um espaçamento entre os campos */
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.rectangle input {
+    border: 1px solid #ccc;
+}
+
+.rectangle button {
+    background-color: #9B5DE5;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.rectangle button:hover {
+    background-color: #7A44C7;
+}
+
+.rectangle a {
+    display: block;
+    color: #FEE440;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.rectangle a:hover {
+    text-decoration: underline;
+}
+

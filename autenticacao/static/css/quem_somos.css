@@ -1,0 +1,128 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F4F4F4;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #9B5DE5;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #FEE440;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Estilo das seções */
+.profile {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Estilo das imagens de perfil */
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00F5D4;
+}
+
+/* Estilo das informações */
+.info h2 {
+    font-size: 1.8rem;
+    color: #9B5DE5;
+}
+
+.info h3 {
+    font-size: 1.3rem;
+    color: #00BBF9;
+    margin-top: 10px;
+}
+
+.info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Lista de Projetos */
+.info ul {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.info ul li {
+    background-color: #FEE440;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Links */
+.info a {
+    color: #00BBF9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info a:hover {
+    color: #00F5D4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info h2 {
+        font-size: 1.5rem;
+    }
+
+    .info h3 {
+        font-size: 1.2rem;
+    }
+}

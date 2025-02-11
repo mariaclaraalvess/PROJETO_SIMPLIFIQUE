@@ -1,0 +1,436 @@
+/* --- FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap');
+
+/* --- ESTILO DA TELA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alexandria', sans-serif;
+    background-color: #9B5DE5;
+    overflow-y: scroll;
+}
+
+/* --- CONFIGURAÇÕES DO CABEÇALHO --- */
+header {
+    background-color: white;
+    height: 65px;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    gap: 6rem;
+}
+
+.menu a {
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #9B5DE5;
+    padding: 0;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: #9B5DE5;
+    background-color: #FFD700;
+    border: 3px solid #FFD700;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.login-btn:hover {
+    background-color: #9B5DE5;
+    color: #FFD700;
+}
+
+/* --- CONFIGURAÇÕES DO CORPO --- */
+main.content {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 65px);
+}
+
+.left-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.right-section {
+    width: 50%;
+    background-color: #9B5DE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* --- LADO ESQUERDO --- */
+
+/* Seção de boas-vindas */
+.welcome-message {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.welcome-message h1 {
+    font-size: 60px;
+    color: white;
+    margin: 0;
+}
+
+.welcome-message p {
+    font-size: 40px;
+    color: #00BBF9;
+    margin-top: 5px;
+}
+
+/* Balão com a mensagem de evento */
+.balão {
+    position: relative;
+    background-color: #FFD700;
+    border-radius: 0px 15px 15px 15px;
+    padding: 20px;
+    width: 500px;
+    margin-top: 20px;
+    font-family: 'Alexandria', sans-serif;
+    margin-bottom: 20px;
+}
+
+.balão p {
+    margin: 0;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.balão h1 {
+    margin: 0;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.balão p:first-child {
+    font-weight: bold;
+    color: #00BBF9;
+}
+
+.add-event-link {
+    color: #9B5DE5;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.add-event-link:hover {
+    text-decoration: underline;
+}
+
+/* --- LADO ESQUERDO --- */
+.left-logo {
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto 2rem auto;
+}
+
+.intro-text, .intro-text2 {
+    display: flex;
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;  /* Reduzido para ajustar o espaçamento entre as linhas */
+    text-align: left;
+    line-height: 0.9;  /* Ajuste o line-height para garantir que o texto tenha espaçamento adequado */
+}
+
+.left-btn-login {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: white;
+    background-color: transparent;
+    border: 3px solid white;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.left-btn-login:hover {
+    background-color: white;
+    color: #7140AD;
+}
+
+.mensagem-evento {
+    color: white;
+    font-weight: bold; /* Adicionando negrito caso queira destacar a mensagem */
+}
+
+.event-bubble {
+    background-color: #00BBF9;
+    border-radius: 12px;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 14px;
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+/* --- CALENDÁRIO --- */
+
+/* Estilo do container do calendário */
+.calendar-container {
+    background: #FFD700;
+    padding: 30px;
+    border-radius: 20px 0 0 20px;
+    width: 80vw;
+    max-width: 650px;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    z-index: 10;
+    max-height: calc(100vh - 60px); /* Limita o tamanho do contêiner a 100% da altura da tela, subtraindo a margem */
+    overflow-y: auto; /* Permite rolagem interna se o conteúdo for maior que o limite */
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+
+/* Cabeçalho do calendário */
+.calendar-header {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;  /* Centraliza o título no meio */
+    align-items: center;
+    width: 100%;
+    position: relative;  /* Permite o posicionamento do botão à direita sem interferir na centralização */
+}
+
+.calendar-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.5em;  /* Tamanho do título "Agenda" */
+}
+
+/* Ajustes para o botão de configurações */
+#config {
+    position: absolute;  /* Faz o botão sair do fluxo normal */
+    right: 10px;         /* Distância da borda direita */
+    background: none;
+    border: none;
+    color: #9B5DE5;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#calendar {
+    padding: 10px;
+    width: 80%;
+    font-size: 0.9em;
+    margin: 0 auto;  /* Centraliza o calendário */
+    overflow-y: auto;  /* Permite rolar o calendário verticalmente, se necessário */
+    max-height: 80vh;  /* Limita a altura do calendário */
+}
+
+.fc-event {
+    background-color: #00AEEF;
+    border-color: #00AEEF;
+    color: #9B5DE5;
+    font-size: 0.8em;
+}
+
+.fc-event-selected {
+    background-color: #FFD700;
+    color: #9B5DE5;
+}
+
+.fc-toolbar-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #9B5DE5;
+}
+
+.fc-toolbar h2 {
+    margin: 0;
+    color: #9B5DE5;
+}
+
+.fc-day-today {
+    background-color: #00AEEF;
+    color: #9B5DE5;
+}
+
+.fc-day-grid, .fc-time-grid, .fc-day-header {
+    font-size: 0.9em;
+    color: #9B5DE5;
+}
+
+@media (max-width: 767px) {
+    #calendar {
+        width: 100%;
+    }
+}
+
+/* Botões e interação */
+button {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.day {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.selected {
+    background: #00AEEF;
+    color: white;
+}
+
+.events {
+    margin-top: 20px;
+}
+
+.events h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 26px;
+}
+
+.addEvent {
+    background: #00AEEF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Lista de eventos */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.event {
+    background: #00AEEF;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.events-section {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #FFD700;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.events-header h2 {
+    font-size: 18px;
+    color: white;
+}
+
+.events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    color: black;
+    gap: 10px;
+}
+
+.events-section h2 {
+    font-size: 18px;
+    color: #6A0DAD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.event-item {
+    background: #6A0DAD;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.addEvent {
+    text-decoration: none;
+    font-size: 20px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.no-events {
+    font-size: 14px;
+    color: #666;
+}
+

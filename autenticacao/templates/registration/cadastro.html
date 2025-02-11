@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="{% url 'tela_inicial' %}">
+            <img src="https://github.com/mariaclaraalvess/simplifique/blob/master/simplifique%20(5).png?raw=true" alt="Logo" class="logo">
+        </a>
+        <nav class="menu">
+            <a href="#">Saiba Mais</a>
+            <a href="#">Quem Somos</a>
+            <a href="#">Suporte</a>
+        </nav>
+        <a href="{% url 'tela_inicial' %}" class="login-btn">Home</a>
+    </header>
+
+    <main class="content">
+        <div class="rectangle">
+            <h1>Cadastro</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    {{ form.username }}
+                </div>
+                <div class="input-group">
+                    {{ form.email }}
+                </div>
+                <div class="input-group">
+                    {{ form.password1 }}
+                </div>
+                <div class="input-group">
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>            
+                {% if form.errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+             <a href="{% url 'login' %}">Já tem conta? Faça login</a>
+        </div>
+    </main>
+</body>
+</html>

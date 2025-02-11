@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Eventos</title>
+        <link rel="stylesheet" href="{% static 'css/listar.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Alexandria&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css">
+    </head>
+<body>
+    <header>
+        <a href="{% url 'inicial' %}">
+            <img src="https://github.com/mariaclaraalvess/simplifique/blob/master/simplifique%20(5).png?raw=true" alt="Logo" class="logo">
+        </a>
+        <nav class="menu">
+            <a href="#">Saiba Mais</a>
+            <a href="#">Quem Somos</a>
+            <a href="#">Suporte</a>
+        </nav>
+        <a href="{% url 'inicial' %}" class="login-btn">Home</a>
+    </header>
+
+    <h1 class="titulo-eventos">Lista de Eventos</h1>
+
+    <!-- Formulário de busca e filtros -->
+    <div class="form-container">
+        <form method="GET" action="{% url 'listar_eventos' %}">
+            <input type="text" name="titulo" placeholder="Buscar por título" value="{{ request.GET.titulo }}">
+            <input type="text" name="local" placeholder="Buscar por local" value="{{ request.GET.local }}">
+            <input type="date" name="data" value="{{ request.GET.data }}">
+            
+            <select name="tipo">
+                <option value="">Todos os tipos</option>
+                <option value="palestra" {% if request.GET.tipo == "palestra" %}selected{% endif %}>Palestra</option>
+                <option value="workshop" {% if request.GET.tipo == "workshop" %}selected{% endif %}>Workshop</option>
+                <option value="seminario" {% if request.GET.tipo == "seminario" %}selected{% endif %}>Seminário</option>
+                <option value="outro" {% if request.GET.tipo == "outro" %}selected{% endif %}>Outro</option>
+            </select>
+
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <ul class="lista-eventos">
+        {% if eventos %}
+            {% for evento in eventos %}
+                <div class="balão">
+                    <p>Evento: <a href="{% url 'detalhes_evento' evento.id %}">{{ evento.titulo }}</a></p>
+                    <p>Local: {{ evento.local }} | Data: {{ evento.horario_inicio|date:"d/m/Y H:i" }} | Tipo: {{ evento.get_tipo_evento_display }}</p>
+                    <p><a href="{% url 'editar_evento' evento.id %}">Editar</a> | <a href="#" class="btn-excluir" data-id="{{ evento.id }}">Excluir</a></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="balão">
+                <p style="color: red; font-weight: bold;">{{ mensagem }}</p>
+            </div>
+        {% endif %}
+    </ul>
+
+    <a href="{% url 'criar_evento' %}" class="btn-criar">Criar Novo Evento</a>
+
+    <script src="{% static 'js/excluir_evento.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

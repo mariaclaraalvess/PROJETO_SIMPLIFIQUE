@@ -1,0 +1,105 @@
+/* Resetando alguns estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo fontes e cores */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F4F4F4;
+    color: #333;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #9B5DE5;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #FEE440;
+}
+
+/* Estilo para a seção principal */
+.main-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.support-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.support-section h1 {
+    font-size: 2.5rem;
+    color: #9B5DE5;
+    margin-bottom: 20px;
+}
+
+.support-section p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    color: #9B5DE5;
+    margin-bottom: 15px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item strong {
+    color: #9B5DE5;
+    font-size: 1.2rem;
+}
+
+.contact-item a {
+    color: #00BBF9;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.contact-item a:hover {
+    color: #00F5D4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .support-section {
+        padding: 20px;
+    }
+
+    .support-section h1 {
+        font-size: 2rem;
+    }
+
+    .contact-item a {
+        font-size: 0.9rem;
+    }
+}

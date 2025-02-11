@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Editar evento</title>
+            <link rel="stylesheet" href="{% static 'css/editar.css' %}">
+            <link href="https://fonts.googleapis.com/css2?family=Alexandria&display=swap" rel="stylesheet"> <!-- Importando a fonte Alexandria -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css">
+        </head>
+<body>
+    <header>
+        <a href="{% url 'inicial' %}">
+            <img src="https://github.com/mariaclaraalvess/simplifique/blob/master/simplifique%20(5).png?raw=true" alt="Logo" class="logo">
+        </a>
+        <nav class="menu">
+            <a href="#">Saiba Mais</a>
+            <a href="#">Quem Somos</a>
+            <a href="#">Suporte</a>
+        </nav>
+        <a href="{% url 'listar_eventos' %}" class="login-btn">Voltar</a>
+    </header>
+    <div class="content">
+        <div class="rectangle">
+            <h1>Editar Evento</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

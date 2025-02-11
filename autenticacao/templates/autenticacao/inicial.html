@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="{% static 'css/inicial.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria&display=swap" rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.css" rel="stylesheet" />
+
+    <!-- Seu arquivo CSS personalizado -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}" />
+
+    <!-- jQuery (necessário para o FullCalendar) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <!-- Moment.js (necessário para o FullCalendar) -->
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.js"></script>
+
+    <!-- FullCalendar Locale - Português Brasileiro -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/locale/pt-br.js"></script>
+
+</head>
+<body>
+    <header>
+        <img src="https://github.com/mariaclaraalvess/simplifique/blob/master/simplifique%20(5).png?raw=true" alt="Logo" class="logo">
+        <nav class="menu">
+            <a href="#">Saiba Mais</a>
+            <a href="#">Quem Somos</a>
+            <a href="#">Suporte</a>
+        </nav>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="login-btn">Logout</button>
+        </form>        
+    </header>
+
+    <main class="content">
+        <div class="left-section">
+            <div class="welcome-message">
+                <h1>Bem-vindo de volta!</h1>
+                <p>O que temos para hoje?</p>
+            </div>
+            <div class="balão">
+                <p style="display: inline;">Olá {{ usuario.username }}, </p>
+                <h1 style="display: inline;">{% if mensagem_evento %}{{ mensagem_evento}}{% else %}Nenhum evento encontrado.{% endif %}</h1>
+
+            </div>            
+            
+            <!-- Título "Eventos" e botão "+" fora do balão -->
+            <div class="events-header">
+                <a href="{% url 'listar_eventos' %}">
+                    <h2>Eventos</h2>
+                </a>                
+                <a href="{% url 'criar_evento' %}" class="addEvent">+</a>
+            </div>
+
+            <!-- Seção de eventos abaixo do balão -->
+            <div class="events-section">
+                <ul class="event-list">
+                    {% for evento in eventos %}
+                        <li class="event-item">
+                            <span class="event-name">{{ evento.titulo }}</span>
+                            <span class="event-time">{{ evento.horario_inicio }}</span>
+                        </li>
+                    {% empty %}
+                        <li class="no-events">Nenhum evento cadastrado</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        <div class="right-section">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h2>Agenda</h2>
+                </div>
+                <div id="calendar"></div>
+                <script>
+                    $(document).ready(function() {
+                    $('#calendar').fullCalendar({
+                        locale: 'pt-br',  // Define o idioma para português brasileiro
+                        events: '/calendar/events/',
+                        editable: true,
+                        droppable: true,
+                        dayClick: function(date, jsEvent, view) {
+                        alert('Você clicou no dia: ' + date.format());
+                        }
+                    });
+                    });
+                    
+                </script>
+                <div class="events">
+                    <h3>Hoje <a href="{% url 'criar_evento' %}" class="addEvent">+</a></h3>
+                    <ul id="eventList">
+                        {% for evento in eventos %}
+                            <li class="event-bubble">
+                                <span class="event-name">{{ evento.titulo }}</span>
+                                <span class="event-time">{{ evento.horario_inicio }}</span>
+                            </li>
+                        {% empty %}
+                            <li class="no-events">Nenhum evento encontrado.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="{% static 'js/inicial.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+
+/* --- CALENDÁRIO --- */
+
+/* Estilo do container do calendário */
+.calendar-container {
+    background: #FFD700;
+    padding: 30px;
+    border-radius: 20px 0 0 20px;
+    width: 80vw;
+    max-width: 650px;
+    height: 80vh;
+    max-height: 620px;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    z-index: 10;
+}
+
+/* Cabeçalho do calendário */
+.calendar-header {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;  /* Centraliza o título no meio */
+    align-items: center;
+    width: 100%;
+    position: relative;  /* Permite o posicionamento do botão à direita sem interferir na centralização */
+}
+
+.calendar-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.5em;  /* Tamanho do título "Agenda" */
+}
+
+/* Ajustes para o botão de configurações */
+#config {
+    position: absolute;  /* Faz o botão sair do fluxo normal */
+    right: 10px;         /* Distância da borda direita */
+    background: none;
+    border: none;
+    color: #9B5DE5;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#calendar {
+    padding: 10px;
+    width: 80%;
+    font-size: 0.9em;
+    margin: 0 auto;  /* Centraliza o calendário */
+}
+
+
+.fc-event {
+    background-color: #00AEEF;
+    border-color: #00AEEF;
+    color: #9B5DE5;
+    font-size: 0.8em;
+}
+
+.fc-event-selected {
+    background-color: #FFD700;
+    color: #9B5DE5;
+}
+
+.fc-toolbar-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #9B5DE5;
+}
+
+.fc-toolbar h2 {
+    margin: 0;
+    color: #9B5DE5;
+}
+
+.fc-day-today {
+    background-color: #00AEEF;
+    color: #9B5DE5;
+}
+
+.fc-day-grid, .fc-time-grid, .fc-day-header {
+    font-size: 0.9em;
+    color: #9B5DE5;
+}
+
+@media (max-width: 767px) {
+    #calendar {
+        width: 100%;
+    }
+}
+
+/* Botões e interação */
+button {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.day {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.selected {
+    background: #00AEEF;
+    color: white;
+}
+
+.events {
+    margin-top: 20px;
+}
+
+.events h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 26px;
+}
+
+.addEvent {
+    background: #00AEEF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+}
+

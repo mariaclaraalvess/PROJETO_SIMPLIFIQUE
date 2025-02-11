@@ -1,0 +1,158 @@
+/* --- FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap');
+
+/* --- ESTILO DA TELA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alexandria', sans-serif;
+    background-color: #9B5DE5;
+    overflow-y: scroll;
+}
+
+/* --- CONFIGURAÇÕES DO CABEÇALHO --- */
+header {
+    background-color: white;
+    height: 65px;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    gap: 6rem;
+}
+
+.menu a {
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #9B5DE5;
+    padding: 0;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: #9B5DE5;
+    background-color: #FFD700;
+    border: 3px solid #FFD700;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.login-btn:hover {
+    background-color: #9B5DE5;
+    color: #FFD700;
+}
+
+/* --- CONFIGURAÇÕES DO CORPO --- */
+main.content {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 65px);
+}
+
+.left-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.right-section {
+    width: 50%;
+    background-color: #9B5DE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Estilos gerais para a página de detalhes do evento */
+.event-details {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Título do evento */
+.event-details h1 {
+    font-size: 2.5rem;
+    color: #9B5DE5; /* Cor para o título */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Descrição do evento */
+.event-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Estilo para os parágrafos */
+.event-details p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.event-details strong {
+    font-weight: bold;
+    color: #9B5DE5; /* Destaque para as labels */
+}
+
+/* Adicionar um fundo suave ao hover */
+.event-details p:hover {
+    background-color: #f9f9f9;
+    padding-left: 10px;
+}
+
+/* Ajuste de responsividade para telas menores */
+@media (max-width: 600px) {
+    .event-details {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .event-details h1 {
+        font-size: 2rem;
+    }
+}

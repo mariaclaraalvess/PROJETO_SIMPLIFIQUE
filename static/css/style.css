@@ -1,0 +1,241 @@
+/* Importando a fonte Alexandria e Glacial Indifference */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alexandria', sans-serif;
+    background-color: #9B5DE5;
+}
+
+/* --- CONFIGURAÇÕES DO CABEÇALHO --- */
+
+header {
+    background-color: #7140AD;
+    height: 65px;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+}
+
+nav.menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    gap: 6rem;
+}
+
+nav.menu a {
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    padding: 0;
+}
+
+nav.menu a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: white;
+    background-color: transparent;
+    border: 3px solid white;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: #7140AD;
+}
+
+/* --- CONFIGURAÇÕES DO CORPO --- */
+
+main.content {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 65px);
+}
+
+.left-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.left-logo {
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto 2rem auto;
+}
+
+.intro-text, .intro-text2 {
+    display: flex;
+    font-family: 'Alexandria', serif;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;  /* Reduzido para ajustar o espaçamento entre as linhas */
+    text-align: left;
+    line-height: 0.9;  /* Ajuste o line-height para garantir que o texto tenha espaçamento adequado */
+}
+
+
+.left-btn-login {
+    font-family: 'Alexandria', serif;
+    font-size: 1.0rem;
+    color: white;
+    background-color: transparent;
+    border: 3px solid white;
+    padding: 0.4rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.left-btn-login:hover {
+    background-color: white;
+    color: #7140AD;
+}
+
+.right-section {
+    width: 50%;
+    background-color: #9B5DE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Fundo amarelo para o calendário */
+#calendario {
+    background-color: #FEE440; /* Fundo amarelo */
+    padding: 20px; /* Espaço interno para dar um respiro */
+    border-radius: 0px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Alexandria', sans-serif;
+}
+
+/* Estilo do cabeçalho (mes/ano) */
+#mes-ano {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:#fff;
+}
+
+/* Botões de navegação (anterior e próximo) */
+#prev-ano, #prev-mes, #next-mes, #next-ano {
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent; /* Sem fundo */
+    margin: 0 5px;
+    color: white; /* Cor do texto em branco */
+    border: none; /* Remover bordas */
+}
+
+#prev-ano:hover, #prev-mes:hover, #next-mes:hover, #next-ano:hover {
+    background-color: transparent; /* Sem fundo ao passar o mouse */
+    color: #9B5DE5; /* Cor do texto ao passar o mouse (amarelo) */
+}
+
+
+/* Estilo da tabela do calendário */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff00; /* Fundo branco dentro do calendário */
+    border-radius: 10px;
+}
+
+/* Estilo das células de dia da semana */
+th {
+    text-align: center;
+    padding: 10px;
+    background-color: #FEE440;
+    color: #9b5de5;
+    font-weight: bold;
+    border: 1px solid #9B5DE5; /* Adicionar borda roxa */
+}
+
+/* Estilo das células de dias */
+td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #9B5DE5;
+    cursor: pointer;
+}
+
+/* Estilo do dia atual */
+.dia-atual {
+    background-color: #9B5DE5;
+    font-weight: bold;
+}
+
+/* Estilo dos fins de semana (sábado e domingo) */
+.fim-de-semana {
+    background-color: #af9c1fb8;
+}
+
+/* Estilo da célula de dia ao passar o mouse */
+td:hover {
+    background-color: #9B5DE5;
+}
+
+/* Tornar o calendário mais responsivo */
+@media (max-width: 768px) {
+    #calendario {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Estilo do cabeçalho (mes/ano) */
+    /* Estilo do cabeçalho (mes/ano) */
+#calendario #mes-ano {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff !important; /* Forçar cor do texto para branco */
+}
+
+
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+}
